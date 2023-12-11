@@ -1,11 +1,13 @@
 import Header from "../../components/Header"
 import MenuLateral from "../../components/MenuLateral"
+import Erros from "../../components/Dashboards/graficoErro/Erros"
 import "./style.css"
 
 import IconeErro from "../../assets/img/erros-icon.png"
 import IconeErrosCorrigidos from "../../assets/img/checked-icon.png"
 import IconeAlertas from "../../assets/img/alerta-icon.png"
 import IconeEstrategias from "../../assets/img/strategy-icon.png"
+
 
 
 export default function Home() {
@@ -18,33 +20,40 @@ export default function Home() {
             <Header/>
                 
                 <section className="principal-home">
-
-                    
                     <div className="centro">
                         <div className="cards-iniciais">
                             <div className="card-inicial">
                                 <img src={ IconeErro } alt="Icone de erro" />
-                                <span>Quantidade de Erros</span>
-                                <p>10</p>
+                                <div className="quantidade">
+                                    <span>Quantidade de Erros</span>
+                                    <p>10</p>
+                                </div>
                             </div>
                             <div className="card-inicial">
                                 <img src={ IconeErrosCorrigidos } alt="Icone de erros corrigidos" />
-                                <span>Erros Corrigidos</span>
-                                <p>10</p>
+                                <div className="quantidade">
+                                    <span>Erros Corrigidos</span>
+                                    <p>10</p>
+                                </div>
                             </div>
                             <div className="card-inicial">
                                 <img src={ IconeAlertas } alt="Icone de alertas" />
-                                <span>Quantidade de Alertas</span>
-                                <p>10</p>
+                                <div className="quantidade">
+                                    <span>Quantidade de Alertas</span>
+                                    <p>10</p>
+                                </div>
                             </div>
                             <div className="card-inicial">
                                 <img src={ IconeEstrategias } alt="Icone de estratégias" />
-                                <span>Quantidade de Estratégias</span>
-                                <p>10</p>
+                                <div className="quantidade">
+                                    <span>Quantidade de Estratégias</span>
+                                    <p>10</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div className="centro-lados">
+                    <Erros/>
                         <div className="lado-um">
                             <div className="plantaMain">
                                 <span>Planta Curitiba</span>
