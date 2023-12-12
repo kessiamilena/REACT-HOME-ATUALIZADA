@@ -7,10 +7,40 @@ import IconeErro from "../../assets/img/erros-icon.png"
 import IconeErrosCorrigidos from "../../assets/img/checked-icon.png"
 import IconeAlertas from "../../assets/img/alerta-icon.png"
 import IconeEstrategias from "../../assets/img/strategy-icon.png"
+import { useEffect, useState } from "react"
+import axios from "axios"
 
 
 
 export default function Home() {
+    
+const [erro, setErro] = useState([]);
+// const [erro, setErro] = useState({});
+
+useEffect(()  => {
+    axios
+        .get("http://localhost:8080/erro")
+        // .then((response) => setErro(response.data))
+        .then((response) => {
+            response.data.map( (item, indice) => {
+                let positionError = erro.findIndex( er => er.ano == item.data_erro.split(`-`)[0]);
+
+                if( positionError != -1){
+                    erro[ positionError ].contagem += 1
+
+                }else{
+                    erro[ erro.length ] = {
+                        ano : item.data_erro.split(`-`)[0],
+                        // ano : erro[item.data_erro.split(`-`)[0]],
+                        contagem : 1
+                    }
+                }
+            })
+        })
+        .catch((error) => console.log(error))
+        .finally;
+}, []);
+
 
 
     return (
@@ -53,7 +83,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="centro-lados">
-                    <Erros/>
+                    <Erros erroList={erro} />
                         <div className="lado-um">
                             <div className="plantaMain">
                                 <span>Planta Curitiba</span>

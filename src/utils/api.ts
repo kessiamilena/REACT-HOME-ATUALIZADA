@@ -34,3 +34,4 @@ export const obterDadosDaAPI = async () => {
     throw error;
   }
 };
+
