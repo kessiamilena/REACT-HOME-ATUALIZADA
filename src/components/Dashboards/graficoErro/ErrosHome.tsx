@@ -77,7 +77,7 @@ import Chart from "react-apexcharts";
 
 import "../graficoErro/style.css"
 
-class Erros extends Component {
+class ErrosHome extends Component {
   constructor(props: any) {
     super(props);
 
@@ -121,7 +121,7 @@ class Erros extends Component {
   }
 }
 
-export default Erros;
+export default ErrosHome;
 
 // erros.tsx
 // import React, { useEffect, useState } from 'react';
