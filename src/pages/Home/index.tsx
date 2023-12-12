@@ -1,6 +1,6 @@
 import Header from "../../components/Header"
 import MenuLateral from "../../components/MenuLateral"
-import Erros from "../../components/Dashboards/graficoErro/Erros"
+import ErrosHome from "../../components/Dashboards/graficoErro/ErrosHome"
 import "./style.css"
 
 import IconeErro from "../../assets/img/erros-icon.png"
@@ -8,7 +8,7 @@ import IconeErrosCorrigidos from "../../assets/img/checked-icon.png"
 import IconeAlertas from "../../assets/img/alerta-icon.png"
 import IconeEstrategias from "../../assets/img/strategy-icon.png"
 import { useEffect, useState } from "react"
-import axios from "axios"
+import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
 
 
 
@@ -47,10 +47,9 @@ useEffect(()  => {
         <>
             <MenuLateral/>
             <main className="mainHome">
-            <Header/>
-                
-                <section className="principal-home">
-                    <div className="centro">
+                <Header/>
+                <section className="section-main">
+                    <div className="lista-quantidades">
                         <div className="cards-iniciais">
                             <div className="card-inicial">
                                 <img src={ IconeErro } alt="Icone de erro" />
@@ -82,90 +81,25 @@ useEffect(()  => {
                             </div>
                         </div>
                     </div>
-                    <div className="centro-lados">
-                    <Erros erroList={erro} />
-                        <div className="lado-um">
-                            <div className="plantaMain">
-                                <span>Planta Curitiba</span>
-                                <div className="imagens-plantaMain">
-                                    {/* <img src={ CarroVermelho } alt="Imagem de um carro vermelho"/>
-                                    <img src={ PainelCarro } alt="Imagem de Painel do carro"/> */}
-                                </div>
+                    <div className="centro">
+                        <div className="centro-um">
+                        <ErrosHome erroList = {erro}/>
+                        <div className="linha"></div>
+                        {/* <div className="cards-meio">
+                            <div className="card-meio">
+                            <img src={ IconeContato } alt="Icone de agenda de contato" />
+                                <h3>Contatar planta</h3>
+                                <p>fale com algum responsável que esteja disponível.</p>
                             </div>
-                            <div className="plantaMain">
-                                <span>Planta Taubaté</span>
-                                <div className="imagens-plantaMain">
-                                    {/* <img src={ CarroPreto } alt="Imagem de um carro preto"/>
-                                    <img src={ PainelCarro } alt="Imagem de Painel do carro"/> */}
-                                </div>
+                            <div className="card-meio">
+                                <img src={ IconeChat } alt="Icone de chat" />
+                                <h3>Chat com analista</h3>
+                                <p>entre em contato com analistas que estejam disponíveis.</p>
                             </div>
-                            <div className="plantaMain">
-                                <span>Planta Anchieta</span>
-                                <div className="imagens-plantaMain">
-                                    {/* <img src={ CarroAzul } alt="Imagem de um carro azul"/>
-                                    <img src={ PainelCarro } alt="Imagem de Painel do carro"/> */}
-                                </div>
-                            </div>
-                            <div className="graficos">
-                                <div>
-                                    <div className="grafico">
-                                        <span>Parada Total da Linha de Produção</span>
-                                        {/* <img className="grafico-img" src={ GraficoLinha } alt="Imagem de Gráfico Linha"/> */}
-                                    </div>
-                                    <div className="grafico">
-                                        <span>Principais erros - Anual</span>
-                                        {/* <img className="grafico-img" src={ GraficoBarras } alt="Imagem de Gráfico de Setores"/> */}
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="grafico">
-                                        <span>Principais erros - Mensal</span>
-                                        {/* <img className="grafico-img" src={ GraficoSetores } alt="Imagem de Gráfico de Setores"/> */}
-                                    </div>
-                                    <div className="grafico">
-                                        {/* <img className="plus-add" src={ IconePlusAdd } alt="Icone para adicionar arquivos"/> */}
-                                    </div>
-                                </div>
-                            </div>
+                        </div> */}
+                        <AlertasHome/>
                         </div>
-                        <div className="lado-dois">
-                            <div className="infos">
-                                <div className="infos-cards">
-                                    <div className="info">
-                                        <div>
-                                            <span>Produção</span>
-                                            {/* <img src={ IconePorcentagem } alt="Icone de porcentagem"/> */}
-                                        </div>
-                                        <span className="onibus">Ônibus</span>
-                                        <p>+ 500 mil uidades produzidas em Taubaté</p>
-                                    </div>
-                                    <div className="info icone-porcent">
-                                        <div>
-                                            <span>Alerta de desempenho:</span>
-                                            {/* <img src={ IconeQPorcentagem } alt="Icone de porcentagem"/> */}
-                                        </div>
-                                        <p>Desempenho abaixo do esperado</p>
-                                    </div>
-                                </div>
-                                <div className="infos-cards">
-                                    <div className="info icone-alerta">
-                                        <div>
-                                            <span>Alerta de segurança:</span>
-                                            {/* <img src={ IconeAlerta } alt="Icone Alerta"/> */}
-                                        </div>
-                                        <p>Sistema comprometido por uma ameaça de segurança</p>
-                                    </div>
-                                    <div className="info">
-                                        <div>
-                                            <span>Produção</span>
-                                            {/* <img src={ IconePorcentagem } alt="Icone de porcentagem"/> */}
-                                        </div>
-                                        <span className="onibus">Ônibus</span>
-                                        <p>+ 500 mil uidades produzidas em Taubaté</p>
-                                    </div>
-                                </div>
-                                {/* <img className="grafico-central" src={ GraficoCentral } alt="Imagem de Gráfico"/> */}
-                            </div>
+                        <div className="centro-dois">
                         </div>
                     </div>
                 </section>
