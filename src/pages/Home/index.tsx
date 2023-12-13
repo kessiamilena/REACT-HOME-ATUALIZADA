@@ -93,7 +93,7 @@ export default function Home() {
                             </div>
                         </div> */}
                         <AlertasHome/>
-                        </div> */}
+                        </div>
                         <AlertasHome/>
                         </div>
                         <div className="centro-dois">
