@@ -7,6 +7,9 @@ import IconeErro from "../../assets/img/erros-icon.png"
 import IconeErrosCorrigidos from "../../assets/img/checked-icon.png"
 import IconeAlertas from "../../assets/img/alerta-icon.png"
 import IconeEstrategias from "../../assets/img/strategy-icon.png"
+import IconeContato from "../../assets/img/icon-contact.png"
+import IconeChat from "../../assets/img/icon-chat.png"
+
 import { useEffect, useState } from "react"
 import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
 import axios from "axios"
@@ -65,39 +68,24 @@ export default function Home() {
                     </div>
                     <div className="centro">
                         <div className="centro-um">
-                        <ErrosHome erroList = {erro}/>
-                        <div className="linha"></div>
-                        {/* <div className="cards-meio">
-                            <div className="card-meio">
-                            <img src={ IconeContato } alt="Icone de agenda de contato" />
-                                <h3>Contatar planta</h3>
-                                <p>fale com algum responsável que esteja disponível.</p>
-                    <div className="centro">
-                        <div className="centro-um">
-                        <ErrosHome erroList = {erro}/>
-                        <div className="linha"></div>
-                        {/* <div className="cards-meio">
-                            <div className="card-meio">
-                            <img src={ IconeContato } alt="Icone de agenda de contato" />
-                                <h3>Contatar planta</h3>
-                                <p>fale com algum responsável que esteja disponível.</p>
+                            <ErrosHome erroList = {erro}/>
+                            {/* <div className="linha"></div> */}
+                            <div className="cards-meio">
+                                <div className="card-meio">
+                                <img src={ IconeContato } alt="Icone de agenda de contato" />
+                                    <h3>Contatar planta</h3>
+                                    <p>fale com algum responsável que esteja disponível.</p>
+                                </div>
+                                <div className="card-meio">
+                                    <img src={ IconeChat } alt="Icone de chat" />
+                                    <h3>Chat com analista</h3>
+                                    <p>entre em contato com analistas que estejam disponíveis.</p>
+                                </div>
                             </div>
-                            <div className="card-meio">
-                                <img src={ IconeChat } alt="Icone de chat" />
-                                <h3>Chat com analista</h3>
-                                <p>entre em contato com analistas que estejam disponíveis.</p>
-                            <div className="card-meio">
-                                <img src={ IconeChat } alt="Icone de chat" />
-                                <h3>Chat com analista</h3>
-                                <p>entre em contato com analistas que estejam disponíveis.</p>
-                            </div>
-                        </div> */}
-                        <AlertasHome/>
-                        </div>
-                        <AlertasHome/>
+                            <AlertasHome/>
                         </div>
                         <div className="centro-dois">
-                        <div className="centro-dois">
+                            {/* centro-dois */}
                         </div>
                     </div>
                 </section>
