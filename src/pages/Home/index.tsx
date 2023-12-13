@@ -9,6 +9,7 @@ import IconeAlertas from "../../assets/img/alerta-icon.png"
 import IconeEstrategias from "../../assets/img/strategy-icon.png"
 import { useEffect, useState } from "react"
 import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
+import axios from "axios"
 
 
 
