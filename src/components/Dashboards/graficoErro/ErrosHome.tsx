@@ -78,7 +78,7 @@ import Chart from "react-apexcharts";
 
 import "../graficoErro/style.css"
 
-class Erros extends Component {
+class ErrosHome extends Component {
   constructor(props: any) {
     super(props);
 
@@ -129,4 +129,50 @@ class Erros extends Component {
 
 
 
-export default Erros;
+export default ErrosHome;
+
+// erros.tsx
+// import React, { useEffect, useState } from 'react';
+// import ApexCharts from 'react-apexcharts';
+// import { obterDadosDaAPI } from '../../../utils/api';
+
+// const Erros = () => {
+//   const [dadosDoGrafico, setDadosDoGrafico] = useState<any>({});
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const dadosAPI = await obterDadosDaAPI();
+
+//         // Manipule os dados conforme necessário para o gráfico
+//         const dadosFormatados = {
+//           series: [{
+//             name: 'Datas',
+//             data: dadosAPI.data_erro // Substitua 'dados' pelo nome do campo que contém seus dados
+//           }],
+//           chart: {
+//             type: 'bar', // ou o tipo de gráfico desejado
+//             height: 350
+//           },
+//           xaxis: {
+//             categories: dadosAPI.nomeerro // Substitua 'categorias' pelo nome do campo que contém suas categorias
+//           }
+//         };
+
+//         setDadosDoGrafico(dadosFormatados);
+//       } catch (error) {
+//         // Lidar com erros, se necessário
+//       }
+//     };
+
+//     fetchData();
+//   }, []);
+
+//   return (
+//     <div>
+//       <ApexCharts options={dadosDoGrafico.chart} series={dadosDoGrafico.series} type={dadosDoGrafico.chart.type} height={dadosDoGrafico.chart.height} />
+//     </div>
+//   );
+// };
+
+// export default Erros;

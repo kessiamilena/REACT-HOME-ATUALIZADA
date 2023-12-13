@@ -14,35 +14,16 @@ import axios from "axios"
 
 
 export default function Home() {
-    
-const [erro, setErro] = useState([]);
-// const [erro, setErro] = useState({});
 
-useEffect(()  => {
-    axios
-        .get("http://localhost:8080/erro")
-        // .then((response) => setErro(response.data))
-        .then((response) => {
-            response.data.map( (item, indice) => {
-                let positionError = erro.findIndex( er => er.ano == item.data_erro.split(`-`)[0]);
+    const [erro, setErro] = useState({});
 
-                if( positionError != -1){
-                    erro[ positionError ].contagem += 1
-
-                }else{
-                    erro[ erro.length ] = {
-                        ano : item.data_erro.split(`-`)[0],
-                        // ano : erro[item.data_erro.split(`-`)[0]],
-                        contagem : 1
-                    }
-                }
-            })
-        })
-        .catch((error) => console.log(error))
-        .finally;
-}, []);
-
-
+    useEffect(()  => {
+        axios
+            .get("http://localhost:8080/erro")
+            .then((response) => console.log(response.data)) // setErro(response.data))
+            .catch((error) => console.log(error))
+            .finally;
+    }, []);
 
     return (
         <>
@@ -91,7 +72,20 @@ useEffect(()  => {
                             <img src={ IconeContato } alt="Icone de agenda de contato" />
                                 <h3>Contatar planta</h3>
                                 <p>fale com algum responsável que esteja disponível.</p>
+                    <div className="centro">
+                        <div className="centro-um">
+                        <ErrosHome erroList = {erro}/>
+                        <div className="linha"></div>
+                        {/* <div className="cards-meio">
+                            <div className="card-meio">
+                            <img src={ IconeContato } alt="Icone de agenda de contato" />
+                                <h3>Contatar planta</h3>
+                                <p>fale com algum responsável que esteja disponível.</p>
                             </div>
+                            <div className="card-meio">
+                                <img src={ IconeChat } alt="Icone de chat" />
+                                <h3>Chat com analista</h3>
+                                <p>entre em contato com analistas que estejam disponíveis.</p>
                             <div className="card-meio">
                                 <img src={ IconeChat } alt="Icone de chat" />
                                 <h3>Chat com analista</h3>
@@ -99,7 +93,10 @@ useEffect(()  => {
                             </div>
                         </div> */}
                         <AlertasHome/>
+                        </div> */}
+                        <AlertasHome/>
                         </div>
+                        <div className="centro-dois">
                         <div className="centro-dois">
                         </div>
                     </div>
