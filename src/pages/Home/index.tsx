@@ -13,6 +13,7 @@ import IconeChat from "../../assets/img/icon-chat.png"
 import { useEffect, useState } from "react"
 import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
 import axios from "axios"
+import LinhaHome from "../../components/Dashboards/graficoLinha/Linha"
 
 
 
@@ -69,7 +70,13 @@ export default function Home() {
                     <div className="centro">
                         <div className="centro-um">
                             <ErrosHome erroList = {erro}/>
-                            {/* <div className="linha"></div> */}
+                            <div className="linha"></div>
+                            {/* estavaaqui */}
+                            <AlertasHome/>
+                        </div>
+                        <div className="centro-dois">
+                            <LinhaHome/>
+                            
                             <div className="cards-meio">
                                 <div className="card-meio">
                                 <img src={ IconeContato } alt="Icone de agenda de contato" />
@@ -82,9 +89,6 @@ export default function Home() {
                                     <p>entre em contato com analistas que estejam disponíveis.</p>
                                 </div>
                             </div>
-                            <AlertasHome/>
-                        </div>
-                        <div className="centro-dois">
                             {/* centro-dois */}
                         </div>
                     </div>
