@@ -35,8 +35,24 @@ body {
 }
 
 .section-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
     height: 100%;
     width: 90%;
+
+    gap: 60px;
+    padding: 70px 25px;
+    margin: 30px 0;
+
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 10px 10px 15px 0px #00000025;
+}
+
+.section-main h2 {
+    margin: 0 0 15px 15px;
 }
 
 .banner-main {
@@ -45,7 +61,7 @@ body {
 
     height: 200px;
 
-    margin-top: 60px;
+    /* margin-top: 60px; */
     border-radius: 20px;
 }
 
@@ -61,7 +77,7 @@ body {
     flex-direction: row;
     justify-content: space-between; */
 
-    margin: 40px 0 80px 0;
+    /* margin: 40px 0 80px 0; */
 }
 
 .cards-iniciais {
@@ -70,7 +86,7 @@ body {
 
     gap: 3.5vw;
 
-    margin: 20px 0 20px 0;
+    /* margin: 20px 0 20px 0; */
 }
 
 .card-inicial {
@@ -85,7 +101,7 @@ body {
     
     border-radius: 10px;
 
-    width: 18.5vw;
+    width: 17.8vw; /* width: 18.5vw; */
     height: 80px;
 }
 
@@ -128,11 +144,19 @@ body {
 .centro-um, .centro-dois{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
+    
     /* gap: 50px; */
     /* justify-content: space-between; */
 } 
+
+.centro-um {
+    justify-content: flex-start;
+    gap: 5vw;
+}
+
+.centro-dois {
+    justify-content: space-between;
+}
 
 
 .linha {
@@ -177,4 +201,41 @@ body {
     font-size: 15px;
 }
 
+.container-alertas {
+    color: var(--preto);
+}
 
+table {
+    width: 100%;
+    margin: 30px 0;
+    border: none;
+    border-collapse: collapse;
+}
+
+caption {
+    font-size: 20px;
+}
+
+caption, th {
+    text-align: left;
+}
+
+tbody > tr:nth-child(odd) {
+    background-color: #F2F2F7;
+}
+
+tr {
+    height: 40px;
+}
+
+th, tr, td {
+    border: none;
+}
+
+.linha-mensagem td {
+    text-align: center;
+}
+
+caption, th, td {
+    padding: 15px;
+}

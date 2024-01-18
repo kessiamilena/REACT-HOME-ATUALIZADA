@@ -57,7 +57,6 @@ useEffect(()  => {
                 // setContagemItem(erro[item].contagem)
                 
                 anoGraf.push(erro[indice].ano)
-                contagemItem.push(erro[contagem])
                 console.log("erro" + JSON.stringify(erro))
                 console.log("anoGraf: " + anoGraf)
                 console.log("contagemItem: " + contagemItem)
@@ -75,7 +74,6 @@ useEffect(()  => {
     //         .catch((error) => console.log(error))
     //         .finally;
     // }, []);
-
 
     return (
         <>
@@ -144,6 +142,33 @@ useEffect(()  => {
                             {/* centro-dois */}
                         </div>
                     </div>
+                <section className="container-alertas">
+                    <h2>Alertas Registrados</h2>
+                    <table>
+                        <caption>Tabela de Alertas</caption>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Altura</th>
+                                <th>Peso</th>
+                                <th>Valor do IMC</th>
+                                <th>Classificação de IMC</th>
+                                <th>Data de cadastro</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-tabela">
+
+                             {/* <tr>
+                                <td data-cell="nome">Thiago Nascimento</td>
+                                <td data-cell="altura">1.78</td>
+                                <td data-cell="peso">67</td>
+                                <td data-cell="valor do IMC">21.1</td>
+                                <td data-cell="classificação do IMC">Normal</td>
+                                <td data-cell="data de cadastro">19/06/2023 21:27</td>
+                            </tr>              */}
+                        </tbody>
+                    </table>
+                </section>
                 </section>
             </main>
         </>
