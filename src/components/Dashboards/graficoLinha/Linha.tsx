@@ -32,7 +32,7 @@ function LinhaHome(props) {
               options={options}
               series={series}
               type="line"
-              width="1000"
+              width="800"
               height="400"
             />
           </div>
