@@ -66,7 +66,7 @@ console.log(contagem)
   const series = [
     {
       name: "series-1",
-      data: props.contagemList
+      data: [10,20,30]
       // data: [k]
     }
   ];
