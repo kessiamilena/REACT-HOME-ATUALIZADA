@@ -48,6 +48,7 @@ useEffect(()  => {
                 }
                 console.log("positionError: " + positionError)
                 
+                
                 //continuar o raciocionio aqui
                 // setAnoGraf(erro[item].ano)
                 // console.log("anoGraf: " + anoGraf)
@@ -60,7 +61,6 @@ useEffect(()  => {
                 console.log("erro" + JSON.stringify(erro))
                 console.log("anoGraf: " + anoGraf)
                 console.log("contagemItem: " + contagemItem)
-
             })
         })
         .catch((error) => console.log(error))
@@ -134,6 +134,7 @@ useEffect(()  => {
                         </div>
                         <div className="centro-dois">
                             <ErrosHome erroList={erro} anoList={anoGraf} contagemList={contagemItem}/>
+                            {/* <ErrosHome erroList={erro}/> */}
                             <div className="linha"></div>
                             {/* estavaaqui */}
                             <AlertasHome/>

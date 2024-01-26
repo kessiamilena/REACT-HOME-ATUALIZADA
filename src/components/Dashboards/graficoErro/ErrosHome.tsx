@@ -1,8 +1,15 @@
 import axios from "axios";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, createContext, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
 import "../graficoErro/style.css"
+
+// type ContagemAno = {
+//     ano : number;
+//     contagem : number
+// }
+
+// export const Ano = createContext({} as ContagemAno );
 
 function ErrosHome(props) {
 // function ErrosHome() {
@@ -13,7 +20,8 @@ function ErrosHome(props) {
       id: "basic-bar"
     },
     xaxis: {
-      categories: props.anoList
+      categories: [10,20,30]
+      // categories: props.anoList
       // categories: [props.data_erro]
     }
   };
