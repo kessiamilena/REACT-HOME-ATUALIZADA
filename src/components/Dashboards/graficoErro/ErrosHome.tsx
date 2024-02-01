@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { Component, createContext, useEffect, useState } from "react";
+import { useEffect } from "react";
 import Chart from "react-apexcharts";
 
 import "../graficoErro/style.css"
@@ -13,25 +12,28 @@ import "../graficoErro/style.css"
 
 // export const Ano = createContext({} as ContagemAno );
 
+
 function ErrosHome(props) {
 // function ErrosHome() {
+
+useEffect(() => {
+  // Atualiza o título do documento usando a API do browser
   console.log("Aqui está a props: " + JSON.stringify(props.anoList))
+  
+}, [props]);
 
   const options = {
     chart: {
       id: "basic-bar"
     },
     xaxis: {
-      // categories: [10,20,30]
       categories: props.anoList
-      // categories: [props.data_erro]
     }
   };
   const series = [
     {
       name: "series-1",
-      data: [10,20,30]
-      // data: [k]
+      data: [10,20]
     }
   ];
 

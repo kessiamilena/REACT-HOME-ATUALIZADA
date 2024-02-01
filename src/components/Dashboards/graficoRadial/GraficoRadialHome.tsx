@@ -1,14 +1,10 @@
-import React from "react";
-import ReactApexChart from "react-apexcharts";
+import Chart from "react-apexcharts"
 
-export default class GraficoRadialHome extends React.Component {
-    constructor(props: {any}) {
-      super(props);
 
-      this.state = {
-      
-        series: [70],
-        options: {
+function GraficoRadialHome(props) {
+
+    const series = [70];
+    const options = {
           chart: {
             // height: 50,
             type: 'radialBar',
@@ -21,22 +17,22 @@ export default class GraficoRadialHome extends React.Component {
             },
           },
           labels: ['Cricket'],
-        },
-      
-      
-      };
-    }
+    };
 
-  
-
-    render() {
 
       return (
 
         <div id="chart">
-        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={50} width={50}/>
+          <Chart 
+              options={options} 
+              series={series} 
+              type="radialBar" 
+              height={50} 
+              width={50}
+          />
         </div>
 
       );
     }
-  }
+
+export default GraficoRadialHome;

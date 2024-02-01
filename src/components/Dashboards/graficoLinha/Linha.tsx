@@ -1,4 +1,3 @@
-import React, { Component, useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
 import "../graficoLinha/style.css"

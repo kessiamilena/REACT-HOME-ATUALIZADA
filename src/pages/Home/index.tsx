@@ -9,13 +9,11 @@ import IconeAlertas from "../../assets/img/alerta-icon.png"
 import IconeEstrategias from "../../assets/img/strategy-icon.png"
 import IconeContato from "../../assets/img/icon-contact.png"
 import IconeChat from "../../assets/img/icon-chat.png"
-import CaminhaoAmarelo from "../../assets/img/caminhao-amarelo.png"
 
 import { useEffect, useState } from "react"
 import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
 import axios from "axios"
 import LinhaHome from "../../components/Dashboards/graficoLinha/Linha"
-import GraficoRadialHome from "../../components/Dashboards/graficoRadial/GraficoRadialHome"
 
 
 export default function Home() {
@@ -23,7 +21,6 @@ export default function Home() {
     const [erro, setErro] = useState([]);
     const [anoGraf, setAnoGraf] = useState([]);
     const [contagemItem, setContagemItem] = useState([]);
-// const [erro, setErro] = useState({});
 
 useEffect(()  => {
      axios
@@ -46,8 +43,7 @@ useEffect(()  => {
                         contagem : 1
                     }
                 }
-                console.log("positionError: " + positionError)
-                
+             
                 
                 //continuar o raciocionio aqui
                 // setAnoGraf(erro[item].ano)
@@ -66,14 +62,6 @@ useEffect(()  => {
         .catch((error) => console.log(error))
         .finally;
     }, []);
-    console.log("contagem: " + contagemItem)
-    // useEffect(()  => {
-    //     axios
-    //         .get("http://localhost:8080/erro")
-    //         .then((response) => console.log(response.data)) // setErro(response.data))
-    //         .catch((error) => console.log(error))
-    //         .finally;
-    // }, []);
 
     return (
         <>
@@ -134,9 +122,7 @@ useEffect(()  => {
                         </div>
                         <div className="centro-dois">
                             <ErrosHome erroList={erro} anoList={anoGraf} contagemList={contagemItem}/>
-                            {/* <ErrosHome erroList={erro}/> */}
                             <div className="linha"></div>
-                            {/* estavaaqui */}
                             <AlertasHome/>
                             
                             
