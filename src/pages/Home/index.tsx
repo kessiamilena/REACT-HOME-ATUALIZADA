@@ -14,10 +14,13 @@ import { useEffect, useState } from "react"
 import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
 import axios from "axios"
 import LinhaHome from "../../components/Dashboards/graficoLinha/Linha"
+import useAlerta from "../../hooks/UseAlerta"
+
 
 
 export default function Home() {
 
+    // const { alerta } = useAlerta()
     const [erro, setErro] = useState([]);
     const [anoGraf, setAnoGraf] = useState([]);
     const [contagemItem, setContagemItem] = useState([]);
@@ -125,28 +128,27 @@ useEffect(()  => {
                             <div className="linha"></div>
                             <AlertasHome/>
                             
-                            
                             {/* centro-dois */}
                         </div>
                     </div>
                 <section className="container-alertas">
                     <h2>Alertas Registrados</h2>
                     <table>
-                        <caption>Tabela de Alertas</caption>
+                        <caption>Alertas de erros</caption>
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Altura</th>
-                                <th>Peso</th>
-                                <th>Valor do IMC</th>
-                                <th>Classificação de IMC</th>
-                                <th>Data de cadastro</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                                <th>Data</th>
+                                <th>Nível de criticidade</th>
+                                <th>Identificador do erro relacionado</th>
                             </tr>
                         </thead>
                         <tbody id="corpo-tabela">
 
                              {/* <tr>
-                                <td data-cell="nome">Thiago Nascimento</td>
+                                <td data-cell="nome">{alerta.nomealerta}</td>
                                 <td data-cell="altura">1.78</td>
                                 <td data-cell="peso">67</td>
                                 <td data-cell="valor do IMC">21.1</td>
