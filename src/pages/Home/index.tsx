@@ -26,45 +26,49 @@ export default function Home() {
     const [contagemItem, setContagemItem] = useState([]);
 
 useEffect(()  => {
-     axios
-        .get("http://localhost:8080/erro")
-        // .then((response) => setErro(response.data))
-        .then((response) => {
-            response.data.map( (item: any, indice: any) => {
-                let positionError = erro.findIndex( er => er.ano == item.data_erro.split(`-`)[0]);
+    //  axios
+    //     .get("http://localhost:8080/erro")
+    //     // .then((response) => setErro(response.data))
+    //     .then((response) => {
+    //         response.data.map( (item: any, indice: any) => {
+    //             let positionError = erro.findIndex( er => er.ano == item.data_erro.split(`-`)[0]);
 
-                if( positionError != -1){
-                    // contagemItem.push(erro[ positionError ].contagem += 1)
-                    erro[ positionError ].contagem += 1
+    //             if( positionError != -1){
+    //                 // contagemItem.push(erro[ positionError ].contagem += 1)
+    //                 erro[ positionError ].contagem += 1
                     
                     
                     
-                }else{
-                    erro[ erro.length ] = {
-                        ano : item.data_erro.split(`-`)[0],
-                        // ano : erro[item.data_erro.split(`-`)[0]],
-                        contagem : 1
-                    }
-                }
+    //             }else{
+    //                 erro[ erro.length ] = {
+    //                     ano : item.data_erro.split(`-`)[0],
+    //                     // ano : erro[item.data_erro.split(`-`)[0]],
+    //                     contagem : 1
+    //                 }
+    //             }
              
                 
-                //continuar o raciocionio aqui
-                // setAnoGraf(erro[item].ano)
-                // console.log("anoGraf: " + anoGraf)
-                // console.log("ErroDoElse: " + JSON.stringify(erro))
-                // setAnoGraf(erro[item].ano)
-                // setAnoGraf(erro[item].ano)
-                // setContagemItem(erro[item].contagem)
+    //             //continuar o raciocionio aqui
+    //             // setAnoGraf(erro[item].ano)
+    //             // console.log("anoGraf: " + anoGraf)
+    //             // console.log("ErroDoElse: " + JSON.stringify(erro))
+    //             // setAnoGraf(erro[item].ano)
+    //             // setAnoGraf(erro[item].ano)
+    //             // setContagemItem(erro[item].contagem)
                 
-                anoGraf.push(erro[indice].ano)
-                console.log("erro" + JSON.stringify(erro))
-                console.log("anoGraf: " + anoGraf)
-                console.log("contagemItem: " + contagemItem)
-            })
-        })
-        .catch((error) => console.log(error))
-        .finally;
+    //             // anoGraf.push(erro[indice].ano)
+    //             // console.log("erro" + JSON.stringify(erro))
+    //             // console.log("anoGraf: " + anoGraf)
+    //             // console.log("contagemItem: " + contagemItem)
+
+    //             console.log(erro)
+    //         })
+    //     })
+    //     .catch((error) => console.log(error))
+    //     .finally;
     }, []);
+
+
 
     return (
         <>

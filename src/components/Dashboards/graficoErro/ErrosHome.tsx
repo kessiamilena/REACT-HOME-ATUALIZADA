@@ -1,42 +1,63 @@
-import { useEffect } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
 import "../graficoErro/style.css"
 
-// type ContagemAno = {
-//     erroList: [
-//       ano : number,
-//       contagem : number
-//     ]
-// }
+interface props {
+  errorList : []
+}
 
-// export const Ano = createContext({} as ContagemAno );
+function ErrosHome() {
 
-
-function ErrosHome(props) {
-// function ErrosHome() {
+  const [options, setOptions] = useState<any>({ chart: { id: "basic-bar" }, xaxis: { categories: [] } })
+  const [series, setSeries] = useState<any>({ name: "series-1", data: [] })
 
 useEffect(() => {
   // Atualiza o título do documento usando a API do browser
-  console.log("Aqui está a props: " + JSON.stringify(props.anoList))
-  
-}, [props]);
 
-  const options = {
-    chart: {
-      id: "basic-bar"
-    },
-    xaxis: {
-      categories: props.anoList
-    }
-  };
-  const series = [
-    {
-      name: "series-1",
-      data: [10,20]
-    }
-  ];
+  axios
+    .get("http://localhost:8080/erro")
+    // .then((response) => setErro(response.data))
+    .then((response) => {
+        const filterList : any = [];
 
+        response.data.map( (item: any) => {
+            let positionError = filterList.findIndex( er => er.ano == item.data_erro.split(`-`)[0]);
+
+            if( positionError == -1){
+              // contagemItem.push(erro[ positionError ].contagem += 1)
+              filterList.push({
+                ano: parseInt(item.data_erro.split(`-`)[0]),
+                contagem: 1
+              })
+                
+            }else{
+              filterList[positionError].contagem += 1
+            }
+        })
+
+        // Chamar a funcao de alimentar os dados
+        AlimentarLista( filterList );
+    })
+    .catch((error) => console.log(error))
+
+
+}, []);
+
+  const AlimentarLista = ( listaErros : any ) => {
+      
+    let testea : any = []
+    let testeb : any = []
+    listaErros.forEach((a, b) => {
+      // options.xaxis.categories.push( a.ano )
+      testea.push( a.ano )
+      testeb.push( a.contagem )
+    }); 
+
+    setOptions({ ...options, xaxis : { categories : testea}})
+    setSeries({ ...series, data : testeb})
+  }
 
   return (
     <div className="app">
@@ -45,7 +66,7 @@ useEffect(() => {
         <div className="mixed-chart">
           <Chart
             options={options}
-            series={series}
+            series={[ series ]}
             type="bar"
             width="500" />
         </div>
