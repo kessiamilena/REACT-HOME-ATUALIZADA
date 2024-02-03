@@ -12,62 +12,30 @@ import IconeChat from "../../assets/img/icon-chat.png"
 
 import { useEffect, useState } from "react"
 import AlertasHome from "../../components/Dashboards/graficoAlerta/AlertasHome"
-import axios from "axios"
 import LinhaHome from "../../components/Dashboards/graficoLinha/Linha"
-import useAlerta from "../../hooks/UseAlerta"
-
+import axios from "axios"
 
 
 export default function Home() {
 
-    // const { alerta } = useAlerta()
     const [erro, setErro] = useState([]);
-    const [anoGraf, setAnoGraf] = useState([]);
-    const [contagemItem, setContagemItem] = useState([]);
+    const [listaAlertas, setListaAlertas] = useState([]);
 
-useEffect(()  => {
-    //  axios
-    //     .get("http://localhost:8080/erro")
-    //     // .then((response) => setErro(response.data))
-    //     .then((response) => {
-    //         response.data.map( (item: any, indice: any) => {
-    //             let positionError = erro.findIndex( er => er.ano == item.data_erro.split(`-`)[0]);
 
-    //             if( positionError != -1){
-    //                 // contagemItem.push(erro[ positionError ].contagem += 1)
-    //                 erro[ positionError ].contagem += 1
-                    
-                    
-                    
-    //             }else{
-    //                 erro[ erro.length ] = {
-    //                     ano : item.data_erro.split(`-`)[0],
-    //                     // ano : erro[item.data_erro.split(`-`)[0]],
-    //                     contagem : 1
-    //                 }
-    //             }
-             
-                
-    //             //continuar o raciocionio aqui
-    //             // setAnoGraf(erro[item].ano)
-    //             // console.log("anoGraf: " + anoGraf)
-    //             // console.log("ErroDoElse: " + JSON.stringify(erro))
-    //             // setAnoGraf(erro[item].ano)
-    //             // setAnoGraf(erro[item].ano)
-    //             // setContagemItem(erro[item].contagem)
-                
-    //             // anoGraf.push(erro[indice].ano)
-    //             // console.log("erro" + JSON.stringify(erro))
-    //             // console.log("anoGraf: " + anoGraf)
-    //             // console.log("contagemItem: " + contagemItem)
+useEffect(() => {
+  // Atualiza o título do documento usando a API do browser
 
-    //             console.log(erro)
-    //         })
-    //     })
-    //     .catch((error) => console.log(error))
-    //     .finally;
-    }, []);
+  axios
+    .get("http://localhost:8080/alertas")
+    // .then((response) => setErro(response.data))
+    .then((response) => {
+        console.log(response.data)
+        setListaAlertas(response.data)
+    })
+    .catch((error) => console.log(error))
+}, []);
 
+console.log("lista alertas: " + JSON.stringify(listaAlertas))
 
 
     return (
@@ -128,7 +96,7 @@ useEffect(()  => {
                             </div>
                         </div>
                         <div className="centro-dois">
-                            <ErrosHome erroList={erro} anoList={anoGraf} contagemList={contagemItem}/>
+                            <ErrosHome erroList={erro}/>
                             <div className="linha"></div>
                             <AlertasHome/>
                             
@@ -151,14 +119,19 @@ useEffect(()  => {
                         </thead>
                         <tbody id="corpo-tabela">
 
-                             {/* <tr>
-                                <td data-cell="nome">{alerta.nomealerta}</td>
-                                <td data-cell="altura">1.78</td>
-                                <td data-cell="peso">67</td>
-                                <td data-cell="valor do IMC">21.1</td>
-                                <td data-cell="classificação do IMC">Normal</td>
-                                <td data-cell="data de cadastro">19/06/2023 21:27</td>
-                            </tr>              */}
+                        {
+                            listaAlertas.map((alerta: any, index: number) => {
+                                // return <span key={index}>{tech}</span>
+                                return <tr>
+                                <td data-cell="nome" key={index}>{alerta.nomealerta}</td>
+                                <td data-cell="descrição" key={index}>{alerta.descricao_alerta}</td>
+                                <td data-cell="status" key={index}>{alerta.status_alerta}</td>
+                                <td data-cell="data" key={index}>{alerta.data_alerta}</td>
+                                <td data-cell="nivel de criticidade" key={index}>{alerta.nivel_criticidade}</td>
+                                <td data-cell="identificador do erro relacionado" key={index}>{alerta.erro.id}</td>
+                            </tr>
+                            })
+                    }
                         </tbody>
                     </table>
                 </section>
