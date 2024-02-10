@@ -59,7 +59,7 @@ export default function MenuLateral() {
                             <span className="title">Estratégias</span>
                         </Link>
                     </li>
-                    <li className="list">
+                    {/* <li className="list">
                         <Link to="/favoritos">
                             <span className="icon">
                                 <img src={FavoritosAzul} alt="" />
@@ -69,7 +69,7 @@ export default function MenuLateral() {
                             </span>
                             <span className="title">Favoritos</span>
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="list">
                         <Link to="/alertas">
                             <span className="icon">

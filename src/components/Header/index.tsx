@@ -26,7 +26,7 @@ function Header() {
                     </div>
                 </div>
 
-                <section className="dropdown1">
+                {/* <section className="dropdown1">
                     <button className="alert">
                         <img
                             src={Favorite}
@@ -39,7 +39,7 @@ function Header() {
                             alt="Icone de Alerta da Tela Principal"
                         />
                     </button>
-                </section >
+                </section > */}
 
                 <section className="dropdown">
 

@@ -61,7 +61,7 @@ useEffect(() => {
 
   return (
     <div className="app">
-      <h2>Erros notificados por período</h2>
+      <h2 className="em-bold">Erros notificados por período</h2>
       <div className="row">
         <div className="mixed-chart">
           <Chart

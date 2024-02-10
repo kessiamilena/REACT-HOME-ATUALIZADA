@@ -6,11 +6,12 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,    
     /* Bundler mode */
     "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true,
-    //"allowImportingTsExtensions": true,
-    //"resolveJsonModule": true,
+    // "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",

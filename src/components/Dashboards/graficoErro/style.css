@@ -1,9 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-
-/* ERROS HOME */
-
-.app h2 {
-    color: #000000;
-
-    margin: 0 0 15px 15px;
+.app {
+    display: flex;
+    width: 100%;
 }

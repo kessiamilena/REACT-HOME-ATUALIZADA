@@ -1,6 +1,4 @@
-import axios from "axios";
 import React, { Component, useEffect, useState } from "react";
-import Chart from "react-apexcharts";
 
 import "../graficoErro/style.css"
 
@@ -95,5 +93,6 @@ class ErrosHome extends Component {
     console.log(this.props)
 
   
+  }
   }
 }
